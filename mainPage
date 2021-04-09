@@ -1,363 +1,344 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html lang='ar'
-	xmlns='http://www.w3.org/1999/xhtml'
-	xmlns:b='http://www.google.com/2005/gml/b'
-	xmlns:data='http://www.google.com/2005/gml/data'
-	xmlns:expr='http://www.google.com/2005/gml/expr'>
-	<head>
-		<meta charset='UTF-8'/>
-		<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-		<b:include data='blog' name='all-head-content'/>
-		<b:if cond='data:blog.pageType == &quot;index&quot;'>
-			<title>
-				<data:blog.pageTitle/>
-			</title>
-			<b:else/>
-			<b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-				<title>
-					<data:blog.pageName/> ~ 
-					
-					
-					
-					<data:blog.title/>
-				</title>
-				<b:else/>
-				<title>404 ~ Page Not Found!</title>
-			</b:if>
-		</b:if>
-		<b:skin>
-			<![CDATA[
-			
-		
-		]]>
-		</b:skin>
-		<link href='https://fonts.gstatic.com' rel='preconnect'/>
-		<link href='https://fonts.googleapis.com/css2?family=Tajawal:wght@700&amp;display=swap' rel='stylesheet'/>
-		<!--&amp;tooverride&-->
-		<!-- BootStrap -->
-		<!-- CSS -->
-		<link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' rel='stylesheet'/>
-		<style>
-
-  //img styling
-  .img-fluid.text-start {
-    position: absolute;
-    left: 0;
-}
-
- .btn-primary {
-    color: #fff;
-    background-color: #52489C;
-    border-color: #52489C;
-}
-.btn-primary:hover{
-    background-color: #FFCAE9;
-    border-color: #FFCAE9;
-        }
-.footer{
-  font-family:Tajawal;
-  background-color: #00A878; 
-  color: white;
-  }
-  #exampleModalLabel, #exampleModalLabelA{
-  text-align: center;
-  width: 100%;
-  font-size: 2em;
-  }
-.dropbtn {
-  background-color: #52489C;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;  
-}
-
-#boyBtn, #girlBtn, #boyGirlBtn{
-	width: 15em; 
-    font-size:20px;&#39;
-}
-#boyName, #girlName, #nameByLetterBoy{
-	font-family:Tajawal;
-        }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #FFE156;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown, .dropend, .dropstart, .dropup {
-    position: absolute;
-    top: 33em;
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #52489C; color:white;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {color: #52489C; background-color: #FFCAE9;}
-
-			
-			
-			<!--Media-->
-		</style>
-	</head>
-	<body style='background-image: url(&apos;http://www.pngall.com/wp-content/uploads/2017/03/Baby-PNG-Image.png&apos;); background-repeat: no-repeat;background-size: cover;opacity: 0.9; background-position: 0px 70px;'>
-		<div class='header'>
-			<figure class='text-center'>
-				<blockquote class='blockquote'>
-					<p class='fs-1' style='font-family:Tajawal;'>اسمك ايه&#1567;</p>
-				</blockquote>
-				<figcaption class='footer'>!اختار اسما لطفلك
-        </figcaption>
-			</figure>
-		</div>
-		<div class='container-sm'>
-			<div class='d-flex justify-content-center align-items-center'>
-				<!-- Form -->
-				<!-- Button trigger modal -->
-				<div class='dropdown'>
-					<button class='dropbtn' id='boyGirlBtn'>اختار اسم ولد او بنت</button>
-					<div class='dropdown-content'>
-						<a class='btn ' data-bs-target='#exampleModal' data-bs-toggle='modal' href='#' id='boyBtn'>ولد</a>
-						<a class='btn ' data-bs-target='#exampleModa2' data-bs-toggle='modal' href='#' id='girlBtn'>بنت</a>
-					</div>
-				</div>
-				<!-- Modal1 boysNames -->
-				<div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModal' tabindex='-1'>
-					<div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
-						<div class='modal-content' style='text-align:center;'>
-							<div class='modal-header'>
-								<h5 class='modal-title' id='exampleModalLabel' style='text-align:center;'>ولد</h5>
-								<button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
-							</div>
-							<div class='modal-body'>
-								<p id='boyName'/>
-							</div>
-							<div class='modal-footer'>
-								<button class='btn btn-secondary' data-bs-dismiss='modal' type='button'>اغلاق</button>
-								<button class='btn btn-primary' onclick='fourLetters()' type='button'>اسم ٤ حروف</button>
-								<button class='btn btn-primary' onclick='luckName()' type='button'>اسم بالحظ</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Modal1 boysNames -->
-				<!-- Modal 2 girlNames -->
-				<div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModa2' tabindex='-1'>
-					<div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
-						<div class='modal-content'>
-							<div class='modal-header'>
-								<h5 class='modal-title' id='exampleModalLabel'>بنت</h5>
-								<button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
-							</div>
-							<div class='modal-body'>
-								<p id='girlName' style='text-align: center;'/>
-							</div>
-							<div class='modal-footer'>
-								<button class='btn btn-secondary' data-bs-dismiss='modal' type='button'>اغلاق</button>
-								<button class='btn btn-primary' onclick='luckgName()' type='button'>اسم بالحظ</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Modal 2 girlNames -->
-				<!-- Modal 3 Search by Letter -->
-				<div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModa3' tabindex='-1'>
-					<div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
-						<div class='modal-content'>
-							<div class='modal-header'>
-								<h5 class='modal-title' id='exampleModalLabelA'>ولد</h5>
-								<button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
-							</div>
-							<div class='modal-body'>
-								<!-- TEXT -->
-								<p id='nameByLetterBoy' style='text-align: center;'/>
-							</div>
-							<div class='modal-footer'>
-								<button class='btn btn-secondary' data-bs-dismiss='modal' onclick='closeNameByLetter()' type='button'>اغلاق</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Modal3 Search by Letter -->
-				<form style='top: 32em;text-align: right; background: none;position:relative;'>
-					<div class='mb-3'>
-						<h4 id='nameByLetter'/>
-						<input class='form-control' id='searchByLetterB' style='text-align: right;' type='text'/>
-						<div class='form-text' id='emailHelp'>اكتب حرف باللغة العربية و سنبحث لك عن اسما&#1617;</div>
-					</div>
-					<div id="checkBoxBoyGirl">
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="checkbox" id="inlineCheckboxG" value="option1"/>
-							<label class="form-check-label" for="inlineCheckboxG">بنت</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<input class="form-check-input" type="checkbox" id="inlineCheckboxB" value="option2"/>
-							<label class="form-check-label" for="inlineCheckboxB">ولد</label>
-						</div>
-					</div>
-					<button onclick='startWith()' style='border: none;'>
-						<a class='btn btn-primary' data-bs-target='#exampleModa3' data-bs-toggle='modal' id='girlBtn' type='submit'>ابحث</a>
-					</button>
-				</form>
-			</div>
-		</div>
-		<b:section class='mainblogsec' id='mainblogsec' showaddelement='no'/>
-		<!-- BootStrap -->
-		<!-- JS -->
-		<script crossorigin='anonymous' integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'/>
-		<script type='text/javascript'>
-//<![CDATA[
-const boysNames = ['إدوارد', 'إسحاق', 'إسماعيل', 'بنيامين', 'توم', 'توماس', 'حنّا', 'داوود', 'زكريا', 'ألبِرت', 'أندريا', 'أنطوني', 'استفانوس', 'باتريك', 'باسيل', 'بيبرس', 'جاك', 'جايكوب', 'جوزيف', 'جون', 'ديفيد', 'روبير', 'روميو', 'سلفستر', 'شارل', 'شارلي', 'فرانسوا', 'فرنسيس', 'فريدريك', 'فيليب', 'كارلوس', 'كُلُود', 'كلير', 'لورانس', 'لويس', 'مارك', 'مايكل', 'هنري', 'وليم', 'إبراهيم', 'أرسلان', 'رسلان', 'عصمت', 'ينال', 'أيوب', 'إبرام', 'جبرائيل', 'جبريال', 'صموئيل', 'عيسى', 'متّى', 'مرقس', 'ميخائيل', 'يعقوب', 'يوسف', 'مانويل', 'آدم', 'آسر', 'أجود', 'أحمد', 'أدهم', 'أديب', 'أسامة', 'أسعد', 'أسمر', 'أسِيف', 'أشرف', 'أشهب', 'أصيل', 'أكثم', 'أكرم', 'أليف', 'أمجد', 'أمير', 'أمين', 'أنس', 'أنور', 'أنيس', 'أوّاب', 'أوس', 'أيمن', 'إحسان', 'إخلاص', 'إسلام', 'إقبال', 'إكرام', 'إلهامي', 'إمام', 'إياد', 'إياس', 'إيمان', 'إيهاب', 'البّراء', 'البشير', 'الحَسن', 'الحُسين', 'المُعتزبالله', 'المنصور', 'الوليد', 'باسل', 'باسِم', 'باهر', 'بَتّال', 'بِجاد', 'بَدّار', 'بَدران', 'بدير', 'بركة', 'بَسّام', 'بَشّار', 'بِشارة', 'بِشر', 'بِشير', 'بَكر', 'بلال', 'بَلسم', 'بهاء', 'بهي', 'بوح', 'تامر', 'تِبر', 'تَحسين', 'تُركي', 'تَقيّ', 'تَليد', 'تمّام', 'تميم', 'توفيق', 'تيسير', 'تيّم', 'ثابت', 'ثاقب', 'ثامر', 'جابر', 'جاد', 'جاسر', 'جاسم', 'جبر', 'جبريل', 'جروان', 'جسّار', 'جسور', 'جعفر', 'جلال', 'جليل', 'جمال', 'جمعة', 'جهاد', 'جَواد', 'جَوّاد', 'جُود', 'حاتم', 'حارب', 'حارث', 'حارثة', 'حارس', 'حازم', 'حافظ', 'حاكم', 'حامد', 'حَبَاب', 'حبيب', 'حُذيفة', 'حُسام', 'حَسّان', 'حَسن', 'حُسني', 'حَسنين', 'حِسين', 'حَكم', 'حِكمت', 'حَكيم', 'حَمّاد', 'حَمد', 'حَمدان', 'حَمزة', 'حَمّود', 'حميد', 'حنيفة', 'حِيدر', 'خاطر', 'خالد', 'خُزام', 'خَطّاب', 'خلف', 'خلفان', 'خليفان', 'خليفة', 'خليل', 'خميس', 'خوري', 'خير', 'خيري', 'دائب', 'داري', 'داغر', 'دالي', 'داني', 'درغام', 'درويش', 'دريد', 'دينار', 'رأفة', 'رأفت', 'رؤوف', 'رائد', 'رائف', 'راجح', 'راجي', 'راجين', 'راشد', 'راضي', 'راغب', 'رافع', 'راكان', 'رامز', 'رامي', 'رَسل', 'رشاد', 'رُشد', 'رشدي', 'رشيد', 'رضا', 'رفيق', 'رمزي', 'رياض', 'ريان', 'زاهر', 'زاهي', 'زايد', 'زبير', 'زهير', 'زياد', 'زيان', 'زيد', 'زين', 'ساري', 'سارية', 'سالم', 'سامح', 'سامر', 'سامي', 'ساهر', 'سديم', 'سِراج', 'سرور', 'سعد', 'سعود', 'سعيد', 'سُفيان', 'سلام', 'سلامة', 'سلطان', 'سلمان', 'سليم', 'سليمان', 'سميح', 'سمير', 'سيف', 'شادي', 'شاكر', 'شاهين', 'شايع', 'شداد', 'شريف', 'شفيق', 'شكري', 'شمس', 'شهاب', 'صابر', 'صادق', 'صالح', 'صباح', 'صفا', 'صفوت', 'صفي', 'صقر', 'صلاح', 'ضاحي', 'ضياء', 'طارق', 'طاهر', 'طايل', 'طلال', 'طلعت', 'طه', 'ظافر', 'عابد', 'عادل', 'عارف', 'عامر', 'عبيدة', 'عثمان', 'عدنان', 'عُدي', 'عرفات', 'عز', 'عزام', 'عزت', 'عزمي', 'عزيز', 'عصام', 'عطية', 'عفت', 'علاء', 'علوي', 'علي', 'عماد', 'عمار', 'عُمر', 'عمرو', 'عُمير', 'عنبر', 'عودة', 'عون', 'عوني', 'عياش', 'غالي', 'غانم', 'غريب', 'غُزيل', 'غسان', 'غفران', 'غنيم', 'غيث', 'فؤاد', 'فاخر', 'فادي', 'فارس', 'فاروق', 'فايز', 'فتحي', 'فخر', 'فداء', 'فدائي', 'فرات', 'فراس', 'فريد', 'فزاع', 'فضل', 'فاضل', 'فهد', 'فهمي', 'فواز', 'فوزي', 'فياض', 'فيصل', 'قابوس', 'قاسم', 'قدري', 'قصي', 'قمر', 'كارم', 'كاظم', 'كامل', 'كرم', 'كريم', 'كمال', 'كنعان', 'لؤي', 'لبيب', 'لطيف', 'ليث', 'مأمون', 'مؤمن', 'مؤنس', 'مؤيد', 'ماجد', 'مازن', 'مالك', 'ماهر', 'مبارك', 'مجد', 'مجدي', 'محسن', 'محفوظ', 'محمد', 'محمود', 'محيي', 'مختار', 'مراد', 'مروان', 'مساعد', 'مشاري', 'مشعل', 'مصطفى', 'مصعب', 'مُعاذ', 'معاوية', 'معتز', 'معتصم', 'معز', 'ملحم', 'مناف', 'منتصر', 'منصف', 'منصور', 'منيب', 'منير', 'منيف', 'مُهاب', 'مهند', 'ميسرة', 'ميلاد', 'نائل', 'نابغ', 'ناجي', 'نادر', 'ناشد', 'ناصر', 'نافع', 'نامق', 'ناير', 'نايف', 'نبيل', 'نبيه', 'نجاد', 'نجيب', 'نديم', 'نزار', 'نسيم', 'نصر', 'نصير', 'نضال', 'نعيم', 'نهاد', 'نواف', 'نور', 'نوف', 'نويرة', 'نياف', 'هادي', 'هارون', 'هاشم', 'هاني', 'هتان', 'هداية', 'هزاع', 'هزيم', 'هشام', 'هلال', 'همام', 'هيثم', 'وئام', 'وائل', 'واصف', 'واصل', 'واضح', 'واعد', 'وافي', 'وجدان', 'وجدي', 'وجيه', 'وحيد', 'ودود', 'وديع', 'ورد', 'وسام', 'وسيم', 'وضاح', 'وفيق', 'وليد', 'وميض', 'وهبة', 'وهبي', 'وهيب', 'ياسر', 'ياسين', 'يحيى', 'يزن', 'يزيد', 'يَسار', 'يسر', 'يسري', 'يقين', 'يُمن', 'يوري', 'يونس', 'بيشوي', 'سام', 'قابيل', 'نوح', 'بَندر', 'تاج', 'جَوان', 'رستم', 'موسى', 'روجيه', 'ريمون', 'مينا', 'أنطوان', 'ريموند', 'شنودة', 'فيكتور', 'كريستوفر', 'تيمور', 'كيرلس', 'أبانوب', 'أندرو', 'إلياس', 'إسكندر', 'بُطرس', 'بولس', 'بيتر', 'توماس', 'جرجس', 'جورج', 'روبرت', 'طوني', 'نيكولا', 'أندراوس', 'إدريس', 'دانيال', 'سمعان', 'سيمون', 'عبدالخالق', 'عبد', 'الرؤوف', 'عبدالرحمن', 'عبدالرحيم', 'عبدالعزيز', 'عبدالغفور', 'عبدالقادر', 'عبدالكريم', 'عبدالله', 'عبدالملك', 'لوقا', 'مكسيموس', 'ناثان', 'ناحوم', 'نوت', 'نيقولاس', 'نيكولاس', 'هجرس', 'يوحنا', 'يونان', 'أوزوريس', 'رمسيس', 'مكسيم', 'صفوان', 'مُريد', 'ريسان', 'براء', 'كنان', 'سادن', 'طائل', 'ذاكر', 'كريستيان', 'باديس', 'رياد', 'معين', 'سرمد', 'أورهان', 'آوين', 'جيان', 'شيرفان', 'يامن', 'كريس', 'أديم', 'سُهيل', 'بدر', 'ونس'];
-const girlsNames = ['بسكال', 'سُرى', 'سارة', 'أزميرالدا', 'ألما', 'أنجيلا', 'أوكتافيا', 'أولجا', 'آيسِل', 'إفرونيا', 'إليزابيث', 'إليسا', 'إيريس', 'إيريني', 'ايزابيل', 'إيف', 'إيميلي', 'ايفلين', 'باريس', 'بارين', 'بِرلنت', 'بِرلَنتي', 'بولا', 'تارا', 'تاليا', 'تولين', 'جانا', 'جانيت', 'جوزفين', 'جينا', 'ديلار', 'دينا', 'رامونا', 'سوزان', 'سونيا', 'سينار', 'شارلوت', 'شانتال', 'شيلا', 'فيرونيكا', 'فيوليت', 'كارول', 'كريستين', 'كلوديا', 'كنزي', 'لانا', 'لورا', 'ليمار', 'ليندا', 'ماجي', 'مارجريت', 'ماجدولين', 'ميرا', 'ميروت', 'ميلسيا', 'ناتاشا', 'ناتالي', 'نادين', 'نانسي', 'نوسة', 'نيفادا', 'نيفين', 'نينا', 'هايدي', 'هويدا', 'هيدي', 'هيلدا', 'ياسمين', 'يولاند', 'مارية', 'أسمهان', 'أيتن', 'رقت', 'عصمت', 'قسمت', 'ماريهان', 'ماهينور', 'مرفت', 'ميرال', 'ميراي', 'نعمت', 'تمارة', 'دليلة', 'ماريان', 'مريم', 'آسية', 'آلاء', 'آمال', 'آمنة', 'آيات', 'آية', 'أبرار', 'أجنادين', 'أحلام', 'أديبة', 'أرغد', 'أروى', 'أريام', 'أريج', 'أزهار', 'أسرار', 'أسرى', 'أسماء', 'أشجان', 'أشرقت', 'أصالة', 'أصيل', 'آفاق', 'أفراح', 'أفنان', 'ألحان', 'ألفة', 'ألمظ', 'أم', 'كُلثوم', 'أُمامة', 'أمانة', 'أماني', 'أمل', 'أمنية', 'أميرة', 'أُميمة', 'أمينة', 'أنغام', 'أنفال', 'أنهار', 'أنوار', 'أنيسة', 'إباء', 'إبتهال', 'إجلال', 'إحسان', 'إخلاص', 'إسراء', 'إسلام', 'إشراق', 'إقبال', 'إكرام', 'إلهام', 'إمتنان', 'إنصاف', 'إنعام', 'إيثار', 'إيمان', 'إيناس', 'إبتسام', 'إرتواء', 'اعتماد', 'الشيّماء', 'انتصار', 'باسمة', 'بَتُول', 'بُثينة', 'بَدرية', 'بُدور', 'بركة', 'بسمات', 'بَسمة', 'بَسملة', 'بَشائر', 'بِشارة', 'بشّام', 'بُشرى', 'بَلسم', 'بلقيس', 'بهجة', 'بهية', 'بهيجة', 'بيداء', 'بيلسان', 'تالية', 'تامة', 'تِبر', 'تحية', 'ترتيل', 'تَرف', 'ترنيم', 'تسنيم', 'تغريد', 'تقوى', 'تُقى', 'تُماضر', 'تنسيم', 'تهاني', 'تودد', 'تيسير', 'تيماء', 'ثُريا', 'ثناء', 'جسور', 'جلاء', 'جليلة', 'جُمان', 'جُمانة', 'جميلة', 'جنّات', 'جِنان', 'جنّة', 'جَنَى', 'جهاد', 'جواهر', 'جُود', 'جودي', 'جوري', 'جورية', 'جورينة', 'جولان', 'جولين', 'جوهرة', 'جوي', 'جويرية', 'جيداء', 'جيلان', 'جيوان', 'حَبَابة', 'حُبور', 'حبيبة', 'حَسناء', 'حَسنات', 'حِصة', 'حَفصة', 'حِكمت', 'حَكيمة', 'حلا', 'حَليمة', 'حنان', 'حنيفة', 'حَنين', 'حوّاء', 'حُور', 'حوراء', 'حُورية', 'حياة', 'خالدة', 'خَدِيجة', 'خُلود', 'خنساء', 'خولة', 'خيرات', 'خيرية', 'دارين', 'داليا', 'دان', 'دانة', 'دانية', 'در', 'درة', 'درية', 'دعاء', 'دعة', 'دعد', 'دلال', 'دنا', 'دنيا', 'ديالا', 'ديمة', 'دينار', 'ذكرى', 'ذهب', 'رؤى', 'رابعة', 'راجية', 'رانيا', 'رباب', 'رُبى', 'رجا', 'رجاء', 'رحاب', 'رحمة', 'رُدينة', 'رزان', 'رَسل', 'رشا', 'رضا', 'رضوى', 'رغد', 'رغدة', 'رِفقة', 'رُفيدة', 'رفيعة', 'رفيف', 'رقية', 'رنا', 'رِناد', 'رند', 'رنوة', 'رنيم', 'رهف', 'روان', 'رودين', 'رودينا', 'روضة', 'روفيدة', 'رويدا', 'ريا', 'ريانة', 'رية', 'ريدة', 'ريم', 'ريما', 'ريماس', 'ريناد', 'ريهام', 'زُبيدة', 'زُها', 'زهرة', 'زهوة', 'زهور', 'زوينة', 'زيان', 'زينب', 'زينة', 'سارية', 'سامية', 'سجى', 'سحر', 'سعاد', 'سُعدة', 'سُعدى', 'سكون', 'سكينة', 'سُلاف', 'سُلافة', 'سلام', 'سلمى', 'سلوى', 'سماح', 'سمر', 'سمية', 'سميحة', 'سميرة', 'سناء', 'سهى', 'سُهير', 'سهيلة', 'شادية', 'شامة', 'شذى', 'شروق', 'شريفة', 'شفاء', 'شكرية', 'شمس', 'شهد', 'شهيرة', 'شوق', 'شيماء', 'صافية', 'صالحة', 'صبا', 'صباح', 'صفا', 'صفاء', 'صفية', 'ضحى', 'ضوى', 'ضياء', 'طاهرة', 'ظبية', 'عائشة', 'عالية', 'عايدة', 'عايشة', 'عبير', 'عزة', 'عزيزة', 'عطايا', 'عطيات', 'عطية', 'عفاف', 'عفت', 'علا', 'علياء', 'علية', 'عليمة', 'عنايات', 'عنبر', 'عنود', 'عهد', 'عودة', 'عون', 'غادة', 'غالية', 'غدير', 'غفران', 'غلا', 'غيداء', 'غزل', 'فاتن', 'فاتنة', 'فادية', 'فاضلة', 'فاطمة', 'فتون', 'فجر', 'فداء', 'فدوة', 'فرات', 'فرح', 'فرحة', 'فريدة', 'فضة', 'فضيلة', 'فُلة', 'فوزية', 'قسمة', 'قطوف', 'قمر', 'كاملة', 'كرم', 'كرمة', 'كريمة', 'كوثر', 'لبنى', 'لجين', 'لطيفة', 'لقاء', 'لمى', 'لمياء', 'ليال', 'ليلى', 'ماجدة', 'مايسة', 'مجد', 'مديحة', 'مرام', 'مروة', 'مروى', 'مشيرة', 'ملك', 'مليكة', 'منار', 'منال', 'منة', 'منى', 'منيرة', 'مها', 'مهجة', 'مهرة', 'مهيرة', 'ميار', 'ميس', 'ميساء', 'ميسرة', 'ميلاء', 'نائلة', 'نادية', 'ناهد', 'نبيلة', 'نجاة', 'نجلاء', 'نجوى', 'ندى', 'نسمة', 'نسيم', 'نضال', 'نعمة', 'نعيمة', 'نغم', 'نفيسة', 'نهاد', 'نهلة', 'نهى', 'نوارة', 'نوال', 'نور', 'نورا', 'نوران', 'نورة', 'نويرة', 'نيرة', 'نيل', 'هاجر', 'هادية', 'هالة', 'هانية', 'هبات', 'هبة', 'هدايا', 'هداية', 'هدى', 'هدية', 'هدير', 'هديل', 'هلا', 'همت', 'همسة', 'هنا', 'هناء', 'هنادي', 'هند', 'هنوف', 'هنية', 'هيا', 'هيام', 'هيفاء', 'هيلة', 'وئام', 'وجد', 'وجدان', 'وجنات', 'وجيدة', 'وداد', 'وديعة', 'ورد', 'وردة', 'وسام', 'وسيلة', 'وصال', 'وعد', 'وعود', 'وفاء', 'ولاء', 'وميض', 'وهاد', 'وهبة', 'وهيبة', 'يسر', 'يسرا', 'يسرية', 'يقين', 'يمامة', 'يُمن', 'يمنى', 'جيسيكا', 'سامنثا', 'ميرنا', 'نرجس', 'نرمين', 'يوستينا', 'إنجي', 'بروين', 'بِنان', 'بيلار', 'تاج', 'جالا', 'جُلنار', 'جَوان', 'جيهان', 'ريتاج', 'سوسن', 'سيرين', 'شاهيناز', 'شريهان', 'شويكار', 'شيرين', 'صافيناز', 'فيروز', 'ماهيتاب', 'ميلي', 'ناريمان', 'نازك', 'نسرين', 'نيروز', 'يارا', 'جاكلين', 'مي', 'أوليفيا', 'بِربارة', 'جولي', 'جوليا', 'جوليانا', 'جوليت', 'روجينا', 'ريتا', 'سيلفيا', 'فيرجينيا', 'فيفيان', 'فيكتوريا', 'كاترين', 'كارلا', 'كارمن', 'كارولين', 'كارولينا', 'كلارا', 'لوسي', 'لينا', 'مارتينا', 'ماريانا', 'نورما', 'أليس', 'تالا', 'تالين', 'تريز', 'ساندرا', 'ساندي', 'سيلين', 'سيلينا', 'كارين', 'ليديا', 'مادلين', 'مايا', 'نيكول', 'نيللي', 'إيفون', 'إيلاف', 'بَسنت', 'بِيسان', 'تالة', 'جورجيت', 'رتّالة', 'رميساء', 'زليخة', 'زمردة', 'سالي', 'سيليا', 'سيمون', 'صوفي', 'صوفيا', 'عبلة', 'فريال', 'كادي', 'كاميليا', 'مارينا', 'ميريام', 'مونيكا', 'ميسون', 'ناردين', 'نانيس', 'يوكابد', 'إيزيس', 'تلا', 'لي', 'لي', 'لامار', 'نورسين', 'آسيا', 'إيلين', 'أسيل', 'وضّاء', 'أسينات', 'لوسيندا', 'هُديّن', 'مرح', 'برديس', 'بهار', 'آزاد', 'روجين', 'نازلي', 'مكة', 'دهب', 'نايا', 'أماندا', 'إليانور', 'داليدا', 'لؤلؤة', 'ونس', 'حُسنى', 'حُسن'];
-
-// All names //
-
-const allNames = boysNames.concat(girlsNames);
-
-// checkboxs //
-
-const inlineCheckboxBoy = document.getElementById('inlineCheckboxB');
-const inlineCheckboxGirl = document.getElementById('inlineCheckboxG');
-
-
-// 4 letter words function //
-
-	const newList = []
-    function fourLetters (){
-	for (let i=0; i< boysNames.length; i++){
-	if (boysNames[i].length < 4){
-	text = boysNames[i] += " ";
-	newList.push(text);
-}
-}
- 	let name = document.getElementById('boyName');
- name.innerHTML = newList.join("<ul></ul>")
-
-}
-
-// show all boy names and clear screen function //
-
-	function showName(){
-    document.getElementById('girlName').innerHTML = "";
-    let name = document.getElementById('boyName');
-    let i;
-	for(i=0; i < boysNames.length ;i++) {
-    name.innerHTML += boysNames[i] + "<br>";	
-}
-    }
-
-// show all girl names and clear screen function //
-
-    function showgName(){
-    document.getElementById('boyName').innerHTML = "";
-    let name = document.getElementById('girlName');
-    let i;
-	for(i=0; i < girlsNames.length ;i++) {
-    name.innerHTML += girlsNames[i] + "<br>";	
-}
-    }
-
-// generate a random boy name from the list //
-
-	function luckName(){
-    document.getElementById('boyName').innerHTML = "";
- 	let name = document.getElementById('boyName');
-	name.innerHTML = boysNames[Math.floor(Math.random()*boysNames.length)];
-}
-
-// generate a random girl name from the list //
-
-	function luckgName(){
-    document.getElementById('boyName').innerHTML = "";
- 	let name = document.getElementById('girlName');
-	name.innerHTML = girlsNames[Math.floor(Math.random()*girlsNames.length)];
-}
-
-// names starting with input letter
-
-	function startWith(){
-	let boyNameInput = document.getElementById('searchByLetterB').value;
-	let namesStartWith = [];
-	let gNamesStartWith = [];
-	let allNamesStartWith = [];
-// making a list with boys names that start with input letter //
-
-	for (let i=0; i< boysNames.length; i++){
-        for (let a=0; a<1; a++)
-        	  if (boysNames[i][0] === boyNameInput){
-            	namesStartWith.push(boysNames[i]);
-              }
-    }
-// making a list with girls names that start with input letter //
-	for (let i=0; i< girlsNames.length; i++){
-        for (let a=0; a<1; a++)
-        	  if (girlsNames[i][0] === boyNameInput){
-            	gNamesStartWith.push(girlsNames[i]);
-              }
-    }
-// making a list with all names that start with input letter //
-	for (let i=0; i< allNames.length; i++){
-        for (let a=0; a<1; a++)
-        	  if (allNames[i][0] === boyNameInput){
-            	allNamesStartWith.push(allNames[i]);
-              }
-    }
-// conditions and radio buttons //
-// wrong input //
-
-    if (namesStartWith.length === 0){
-	document.getElementById("exampleModalLabelA").innerHTML = " ";
-    document.getElementById("nameByLetterBoy").innerHTML = "استخدم حروف عربية و حرف واحد";
-    }
-// Boy name input //
-
-    else if (namesStartWith.length !== 0 && inlineCheckboxBoy.checked == true && inlineCheckboxGirl.checked == false){
-    let search = document.getElementById('nameByLetterBoy');
-	search.innerHTML = namesStartWith.join("<ul></ul>");
-	document.getElementById("exampleModalLabelA").innerHTML = "ولد";
-	document.getElementById("nameByLetter").innerHTML = " ";
-    }
-// girl name input //
-
-    else if (gNamesStartWith.length !== 0 && inlineCheckboxBoy.checked == false && inlineCheckboxGirl.checked == true){
-	document.getElementById("exampleModalLabelA").innerHTML = "بنت";
-
-    let search = document.getElementById('nameByLetterBoy');
-	search.innerHTML = gNamesStartWith.join("<ul></ul>");
-	document.getElementById("nameByLetter").innerHTML = " ";
-    }
-// all names input //
-
-    else if (gNamesStartWith.length !== 0 && inlineCheckboxBoy.checked == true && inlineCheckboxGirl.checked == true){
-	document.getElementById("exampleModalLabelA").innerHTML = "بنت و ولد";
-    let search = document.getElementById('nameByLetterBoy');
-	search.innerHTML = allNamesStartWith.join("<ul></ul>");
-	document.getElementById("nameByLetter").innerHTML = " ";
-    }
-	else {
-	document.getElementById("exampleModalLabelA").innerHTML = " ";
-	document.getElementById("nameByLetterBoy").innerHTML = "أختار اسم ولد او بنت";
-
-}
-}
-	function closeNameByLetter(){
-	document.getElementById("nameByLetter").innerHTML = " ";
-	document.getElementById("nameByLetterBoy").innerHTML = " ";
-}
-
-//]]>
-		</script>
-	</body>
+<html lang='ar' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+   <head>
+      <meta charset='UTF-8'/>
+      <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+      <b:include data='blog' name='all-head-content'/>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+         <title>
+            اختار اسم مولودك ولد او بنت				
+         </title>
+         <meta content=' موقع اسمك ايه يساعدك علي اختيار اسم لطفلك من اكبر موسوعة للأسماء المميزة. اسماء تناسب مولودك  اسماء اولاد و بنات.  ' name='description'/>
+         <meta content='index, follow' name='robots'/>
+         <b:else/>
+         <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+            <b:else/>
+            <title>404 ~ Page Not Found!</title>
+         </b:if>
+      </b:if>
+      <b:skin><![CDATA[
+         
+            
+      ]]></b:skin>
+      <link href='https://fonts.gstatic.com' rel='preconnect'/>
+      <link href='https://fonts.googleapis.com/css2?family=Tajawal:wght@700&amp;display=swap' rel='stylesheet'/>
+      <!--&amp;tooverride&-->
+      <!-- BootStrap -->
+      <!-- CSS -->
+      <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css' integrity='sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl' rel='stylesheet'/>
+      <style>
+         #checkBoxBoyGirl {
+         margin: 20px;
+         text-align-last: right;
+         }
+         //img styling
+         .img-fluid.text-start {
+         position: absolute;
+         left: 0;
+         }
+         .btn-primary {
+         color: #fff;
+         background-color: #52489C;
+         border-color: #52489C;
+         }
+         .btn-primary:hover{
+         background-color: #FFCAE9;
+         border-color: #FFCAE9;
+         }
+         .footer{
+         font-family:Tajawal;
+         background-color: #00A878; 
+         color: white;
+         }
+         #exampleModalLabel, #exampleModalLabelA{
+         text-align: center;
+         width: 100%;
+         font-size: 2em;
+         }
+         .dropbtn {
+         background-color: #52489C;
+         color: white;
+         padding: 16px;
+         font-size: 16px;
+         border: none;  
+         }
+         #boyBtn, #girlBtn, #boyGirlBtn{
+         width: 15em; 
+         font-size:20px;&#39;
+         }
+         #boyName, #girlName, #nameByLetterBoy{
+         font-family:Tajawal;
+         }
+         .dropdown-content {
+         display: none;
+         position: absolute;
+         background-color: #FFE156;
+         min-width: 160px;
+         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+         z-index: 1;
+         }
+         .dropdown, .dropend, .dropstart, .dropup {
+         position: absolute;
+         top: 30em;
+         }
+         .dropdown-content a {
+         color: black;
+         padding: 12px 16px;
+         text-decoration: none;
+         display: block;
+         }
+         .dropdown-content a:hover {background-color: #52489C; color:white;}
+         .dropdown:hover .dropdown-content {display: block;}
+         .dropdown:hover .dropbtn {color: #52489C; background-color: #FFCAE9;}
+         <!--Media-->
+      </style>
+   </head>
+   <body style='background-image: url(&apos;http://www.pngall.com/wp-content/uploads/2017/03/Baby-PNG-Image.png&apos;); background-repeat: no-repeat;background-size: cover;opacity: 0.9; background-position: 0px 70px;'>
+      <div class='header'>
+         <figure class='text-center'>
+            <blockquote class='blockquote' style='margin:0.1rem;padding-top:0.2rem;'>
+               <p class='fs-1' style='font-family:Tajawal;'>اسمك ايه&#1567;</p>
+            </blockquote>
+            <figcaption class='footer' style='padding-top: 0.2rem;'>!اختار اسما لطفلك
+            </figcaption>
+         </figure>
+      </div>
+      <div class='container-sm'>
+         <div class='d-flex justify-content-center align-items-center'>
+            <!-- Form -->
+            <!-- Button trigger modal -->
+            <div class='dropdown'>
+               <button class='dropbtn' id='boyGirlBtn'>اختار اسم ولد او بنت</button>
+               <div class='dropdown-content'>
+                  <a class='btn ' data-bs-target='#exampleModal' data-bs-toggle='modal' href='#' id='boyBtn'>ولد</a>
+                  <a class='btn ' data-bs-target='#exampleModa2' data-bs-toggle='modal' href='#' id='girlBtn'>بنت</a>
+               </div>
+            </div>
+            <!-- Modal1 boysNames -->
+            <div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModal' tabindex='-1'>
+               <div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
+                  <div class='modal-content' style='text-align:center;'>
+                     <div class='modal-header'>
+                        <h5 class='modal-title' id='exampleModalLabel' style='text-align:center;'>ولد</h5>
+                        <button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
+                     </div>
+                     <div class='modal-body'>
+                     <p id='boyName'/>
+                     </div>
+                     <div class='modal-footer'>
+                     <button class='btn btn-secondary' data-bs-dismiss='modal' type='button'>اغلاق</button>
+                     <!-- <button class='btn btn-primary' onclick='fourLetters()' type='button'>اسم ٤ حروف</button> -->
+                     <button class='btn btn-primary' onclick='luckName()' type='button'>اسم بالحظ</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End Modal1 boysNames -->
+            <!-- Modal 2 girlNames -->
+            <div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModa2' tabindex='-1'>
+               <div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
+                  <div class='modal-content'>
+                     <div class='modal-header'>
+                        <h5 class='modal-title' id='exampleModalLabel'>بنت</h5>
+                        <button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
+                     </div>
+                     <div class='modal-body'>
+                     <p id='girlName' style='text-align: center;'/>
+                     </div>
+                     <div class='modal-footer'>
+                     <button class='btn btn-secondary' data-bs-dismiss='modal' type='button'>اغلاق</button>
+                     <button class='btn btn-primary' onclick='luckgName()' type='button'>اسم بالحظ</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End Modal 2 girlNames -->
+            <!-- Modal 3 Search by Letter -->
+            <div aria-hidden='true' aria-labelledby='exampleModalLabel' class='modal fade' id='exampleModa3' tabindex='-1'>
+               <div class='modal-dialog modal-dialog-scrollable modal-dialog-centered'>
+                  <div class='modal-content'>
+                     <div class='modal-header'>
+                        <h5 class='modal-title' id='exampleModalLabelA'>ولد</h5>
+                        <button aria-label='Close' class='btn-close' data-bs-dismiss='modal' type='button'/>
+                     </div>
+                     <div class='modal-body'>
+                     <!-- TEXT -->
+                     <p id='nameByLetterBoy' style='text-align: center;'/>
+                     </div>
+                     <div class='modal-footer'>
+                     <button class='btn btn-secondary' data-bs-dismiss='modal' onclick='closeNameByLetter()' type='button'>اغلاق</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- End Modal3 Search by Letter -->
+            <form style='top: 29em;text-align: right; background: none;position:relative;'>
+               <div class='mb-3'>
+                  <h4 id='nameByLetter'/>
+                  <input class='form-control' id='searchByLetterB' placeholder='اكتب حرف باللغة العربية و سنبحث لك عن اسماّ' style='text-align: right;' type='text'/>
+               </div>
+               <div id='checkBoxBoyGirl'>
+                  <div class='form-check form-check-inline'>
+                     <input class='form-check-input' id='inlineCheckboxG' type='checkbox' value='option1'/>
+                     <label class='form-check-label' for='inlineCheckboxG'>بنت</label>
+                  </div>
+                  <div class='form-check form-check-inline'>
+                     <input class='form-check-input' id='inlineCheckboxB' type='checkbox' value='option2'/>
+                     <label class='form-check-label' for='inlineCheckboxB'>ولد</label>
+                  </div>
+               </div>
+               <button onclick='startWith()' style='border: none;background:none;'>
+               <a class='btn btn-primary' data-bs-target='#exampleModa3' data-bs-toggle='modal' id='girlBtn' type='submit'>ابحث</a>
+               </button>
+            </form>
+         </div>
+      </div>
+      <b:section class='mainblogsec' id='mainblogsec' showaddelement='no'/>
+      <!-- BootStrap -->
+      <!-- JS -->
+      <script crossorigin='anonymous' integrity='sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js'/>
+         <script type='text/javascript'>
+         //<![CDATA[
+         const boysNames = ['إدوارد', 'إسحاق', 'إسماعيل', 'بنيامين', 'توم', 'توماس', 'حنّا', 'داوود', 'زكريا', 'ألبِرت', 'أندريا', 'أنطوني', 'استفانوس', 'باتريك', 'باسيل', 'بيبرس', 'جاك', 'جايكوب', 'جوزيف', 'جون', 'ديفيد', 'روبير', 'روميو', 'سلفستر', 'شارل', 'شارلي', 'فرانسوا', 'فرنسيس', 'فريدريك', 'فيليب', 'كارلوس', 'كُلُود', 'كلير', 'لورانس', 'لويس', 'مارك', 'مايكل', 'هنري', 'وليم', 'إبراهيم', 'أرسلان', 'رسلان', 'عصمت', 'ينال', 'أيوب', 'إبرام', 'جبرائيل', 'جبريال', 'صموئيل', 'عيسى', 'متّى', 'مرقس', 'ميخائيل', 'يعقوب', 'يوسف', 'مانويل', 'آدم', 'آسر', 'أجود', 'أحمد', 'أدهم', 'أديب', 'أسامة', 'أسعد', 'أسمر', 'أسِيف', 'أشرف', 'أشهب', 'أصيل', 'أكثم', 'أكرم', 'أليف', 'أمجد', 'أمير', 'أمين', 'أنس', 'أنور', 'أنيس', 'أوّاب', 'أوس', 'أيمن', 'إحسان', 'إخلاص', 'إسلام', 'إقبال', 'إكرام', 'إلهامي', 'إمام', 'إياد', 'إياس', 'إيمان', 'إيهاب', 'البّراء', 'البشير', 'الحَسن', 'الحُسين', 'المُعتزبالله', 'المنصور', 'الوليد', 'باسل', 'باسِم', 'باهر', 'بَتّال', 'بِجاد', 'بَدّار', 'بَدران', 'بدير', 'بركة', 'بَسّام', 'بَشّار', 'بِشارة', 'بِشر', 'بِشير', 'بَكر', 'بلال', 'بَلسم', 'بهاء', 'بهي', 'بوح', 'تامر', 'تِبر', 'تَحسين', 'تُركي', 'تَقيّ', 'تَليد', 'تمّام', 'تميم', 'توفيق', 'تيسير', 'تيّم', 'ثابت', 'ثاقب', 'ثامر', 'جابر', 'جاد', 'جاسر', 'جاسم', 'جبر', 'جبريل', 'جروان', 'جسّار', 'جسور', 'جعفر', 'جلال', 'جليل', 'جمال', 'جمعة', 'جهاد', 'جَواد', 'جَوّاد', 'جُود', 'حاتم', 'حارب', 'حارث', 'حارثة', 'حارس', 'حازم', 'حافظ', 'حاكم', 'حامد', 'حَبَاب', 'حبيب', 'حُذيفة', 'حُسام', 'حَسّان', 'حَسن', 'حُسني', 'حَسنين', 'حِسين', 'حَكم', 'حِكمت', 'حَكيم', 'حَمّاد', 'حَمد', 'حَمدان', 'حَمزة', 'حَمّود', 'حميد', 'حنيفة', 'حِيدر', 'خاطر', 'خالد', 'خُزام', 'خَطّاب', 'خلف', 'خلفان', 'خليفان', 'خليفة', 'خليل', 'خميس', 'خوري', 'خير', 'خيري', 'دائب', 'داري', 'داغر', 'دالي', 'داني', 'درغام', 'درويش', 'دريد', 'دينار', 'رأفة', 'رأفت', 'رؤوف', 'رائد', 'رائف', 'راجح', 'راجي', 'راجين', 'راشد', 'راضي', 'راغب', 'رافع', 'راكان', 'رامز', 'رامي', 'رَسل', 'رشاد', 'رُشد', 'رشدي', 'رشيد', 'رضا', 'رفيق', 'رمزي', 'رياض', 'ريان', 'زاهر', 'زاهي', 'زايد', 'زبير', 'زهير', 'زياد', 'زيان', 'زيد', 'زين', 'ساري', 'سارية', 'سالم', 'سامح', 'سامر', 'سامي', 'ساهر', 'سديم', 'سِراج', 'سرور', 'سعد', 'سعود', 'سعيد', 'سُفيان', 'سلام', 'سلامة', 'سلطان', 'سلمان', 'سليم', 'سليمان', 'سميح', 'سمير', 'سيف', 'شادي', 'شاكر', 'شاهين', 'شايع', 'شداد', 'شريف', 'شفيق', 'شكري', 'شمس', 'شهاب', 'صابر', 'صادق', 'صالح', 'صباح', 'صفا', 'صفوت', 'صفي', 'صقر', 'صلاح', 'ضاحي', 'ضياء', 'طارق', 'طاهر', 'طايل', 'طلال', 'طلعت', 'طه', 'ظافر', 'عابد', 'عادل', 'عارف', 'عامر', 'عبيدة', 'عثمان', 'عدنان', 'عُدي', 'عرفات', 'عز', 'عزام', 'عزت', 'عزمي', 'عزيز', 'عصام', 'عطية', 'عفت', 'علاء', 'علوي', 'علي', 'عماد', 'عمار', 'عُمر', 'عمرو', 'عُمير', 'عنبر', 'عودة', 'عون', 'عوني', 'عياش', 'غالي', 'غانم', 'غريب', 'غُزيل', 'غسان', 'غفران', 'غنيم', 'غيث', 'فؤاد', 'فاخر', 'فادي', 'فارس', 'فاروق', 'فايز', 'فتحي', 'فخر', 'فداء', 'فدائي', 'فرات', 'فراس', 'فريد', 'فزاع', 'فضل', 'فاضل', 'فهد', 'فهمي', 'فواز', 'فوزي', 'فياض', 'فيصل', 'قابوس', 'قاسم', 'قدري', 'قصي', 'قمر', 'كارم', 'كاظم', 'كامل', 'كرم', 'كريم', 'كمال', 'كنعان', 'لؤي', 'لبيب', 'لطيف', 'ليث', 'مأمون', 'مؤمن', 'مؤنس', 'مؤيد', 'ماجد', 'مازن', 'مالك', 'ماهر', 'مبارك', 'مجد', 'مجدي', 'محسن', 'محفوظ', 'محمد', 'محمود', 'محيي', 'مختار', 'مراد', 'مروان', 'مساعد', 'مشاري', 'مشعل', 'مصطفى', 'مصعب', 'مُعاذ', 'معاوية', 'معتز', 'معتصم', 'معز', 'ملحم', 'مناف', 'منتصر', 'منصف', 'منصور', 'منيب', 'منير', 'منيف', 'مُهاب', 'مهند', 'ميسرة', 'ميلاد', 'نائل', 'نابغ', 'ناجي', 'نادر', 'ناشد', 'ناصر', 'نافع', 'نامق', 'ناير', 'نايف', 'نبيل', 'نبيه', 'نجاد', 'نجيب', 'نديم', 'نزار', 'نسيم', 'نصر', 'نصير', 'نضال', 'نعيم', 'نهاد', 'نواف', 'نور', 'نوف', 'نويرة', 'نياف', 'هادي', 'هارون', 'هاشم', 'هاني', 'هتان', 'هداية', 'هزاع', 'هزيم', 'هشام', 'هلال', 'همام', 'هيثم', 'وئام', 'وائل', 'واصف', 'واصل', 'واضح', 'واعد', 'وافي', 'وجدان', 'وجدي', 'وجيه', 'وحيد', 'ودود', 'وديع', 'ورد', 'وسام', 'وسيم', 'وضاح', 'وفيق', 'وليد', 'وميض', 'وهبة', 'وهبي', 'وهيب', 'ياسر', 'ياسين', 'يحيى', 'يزن', 'يزيد', 'يَسار', 'يسر', 'يسري', 'يقين', 'يُمن', 'يوري', 'يونس', 'بيشوي', 'سام', 'قابيل', 'نوح', 'بَندر', 'تاج', 'جَوان', 'رستم', 'موسى', 'روجيه', 'ريمون', 'مينا', 'أنطوان', 'ريموند', 'شنودة', 'فيكتور', 'كريستوفر', 'تيمور', 'كيرلس', 'أبانوب', 'أندرو', 'إلياس', 'إسكندر', 'بُطرس', 'بولس', 'بيتر', 'توماس', 'جرجس', 'جورج', 'روبرت', 'طوني', 'نيكولا', 'أندراوس', 'إدريس', 'دانيال', 'سمعان', 'سيمون', 'عبدالخالق', 'عبد', 'الرؤوف', 'عبدالرحمن', 'عبدالرحيم', 'عبدالعزيز', 'عبدالغفور', 'عبدالقادر', 'عبدالكريم', 'عبدالله', 'عبدالملك', 'لوقا', 'مكسيموس', 'ناثان', 'ناحوم', 'نوت', 'نيقولاس', 'نيكولاس', 'هجرس', 'يوحنا', 'يونان', 'أوزوريس', 'رمسيس', 'مكسيم', 'صفوان', 'مُريد', 'ريسان', 'براء', 'كنان', 'سادن', 'طائل', 'ذاكر', 'كريستيان', 'باديس', 'رياد', 'معين', 'سرمد', 'أورهان', 'آوين', 'جيان', 'شيرفان', 'يامن', 'كريس', 'أديم', 'سُهيل', 'بدر', 'ونس'];
+         const girlsNames = ['بسكال', 'سُرى', 'سارة', 'أزميرالدا', 'ألما', 'أنجيلا', 'أوكتافيا', 'أولجا', 'آيسِل', 'إفرونيا', 'إليزابيث', 'إليسا', 'إيريس', 'إيريني', 'ايزابيل', 'إيف', 'إيميلي', 'ايفلين', 'باريس', 'بارين', 'بِرلنت', 'بِرلَنتي', 'بولا', 'تارا', 'تاليا', 'تولين', 'جانا', 'جانيت', 'جوزفين', 'جينا', 'ديلار', 'دينا', 'رامونا', 'سوزان', 'سونيا', 'سينار', 'شارلوت', 'شانتال', 'شيلا', 'فيرونيكا', 'فيوليت', 'كارول', 'كريستين', 'كلوديا', 'كنزي', 'لانا', 'لورا', 'ليمار', 'ليندا', 'ماجي', 'مارجريت', 'ماجدولين', 'ميرا', 'ميروت', 'ميلسيا', 'ناتاشا', 'ناتالي', 'نادين', 'نانسي', 'نوسة', 'نيفادا', 'نيفين', 'نينا', 'هايدي', 'هويدا', 'هيدي', 'هيلدا', 'ياسمين', 'يولاند', 'مارية', 'أسمهان', 'أيتن', 'رقت', 'عصمت', 'قسمت', 'ماريهان', 'ماهينور', 'مرفت', 'ميرال', 'ميراي', 'نعمت', 'تمارة', 'دليلة', 'ماريان', 'مريم', 'آسية', 'آلاء', 'آمال', 'آمنة', 'آيات', 'آية', 'أبرار', 'أجنادين', 'أحلام', 'أديبة', 'أرغد', 'أروى', 'أريام', 'أريج', 'أزهار', 'أسرار', 'أسرى', 'أسماء', 'أشجان', 'أشرقت', 'أصالة', 'أصيل', 'آفاق', 'أفراح', 'أفنان', 'ألحان', 'ألفة', 'ألمظ', 'أم', 'كُلثوم', 'أُمامة', 'أمانة', 'أماني', 'أمل', 'أمنية', 'أميرة', 'أُميمة', 'أمينة', 'أنغام', 'أنفال', 'أنهار', 'أنوار', 'أنيسة', 'إباء', 'إبتهال', 'إجلال', 'إحسان', 'إخلاص', 'إسراء', 'إسلام', 'إشراق', 'إقبال', 'إكرام', 'إلهام', 'إمتنان', 'إنصاف', 'إنعام', 'إيثار', 'إيمان', 'إيناس', 'إبتسام', 'إرتواء', 'اعتماد', 'الشيّماء', 'انتصار', 'باسمة', 'بَتُول', 'بُثينة', 'بَدرية', 'بُدور', 'بركة', 'بسمات', 'بَسمة', 'بَسملة', 'بَشائر', 'بِشارة', 'بشّام', 'بُشرى', 'بَلسم', 'بلقيس', 'بهجة', 'بهية', 'بهيجة', 'بيداء', 'بيلسان', 'تالية', 'تامة', 'تِبر', 'تحية', 'ترتيل', 'تَرف', 'ترنيم', 'تسنيم', 'تغريد', 'تقوى', 'تُقى', 'تُماضر', 'تنسيم', 'تهاني', 'تودد', 'تيسير', 'تيماء', 'ثُريا', 'ثناء', 'جسور', 'جلاء', 'جليلة', 'جُمان', 'جُمانة', 'جميلة', 'جنّات', 'جِنان', 'جنّة', 'جَنَى', 'جهاد', 'جواهر', 'جُود', 'جودي', 'جوري', 'جورية', 'جورينة', 'جولان', 'جولين', 'جوهرة', 'جوي', 'جويرية', 'جيداء', 'جيلان', 'جيوان', 'حَبَابة', 'حُبور', 'حبيبة', 'حَسناء', 'حَسنات', 'حِصة', 'حَفصة', 'حِكمت', 'حَكيمة', 'حلا', 'حَليمة', 'حنان', 'حنيفة', 'حَنين', 'حوّاء', 'حُور', 'حوراء', 'حُورية', 'حياة', 'خالدة', 'خَدِيجة', 'خُلود', 'خنساء', 'خولة', 'خيرات', 'خيرية', 'دارين', 'داليا', 'دان', 'دانة', 'دانية', 'در', 'درة', 'درية', 'دعاء', 'دعة', 'دعد', 'دلال', 'دنا', 'دنيا', 'ديالا', 'ديمة', 'دينار', 'ذكرى', 'ذهب', 'رؤى', 'رابعة', 'راجية', 'رانيا', 'رباب', 'رُبى', 'رجا', 'رجاء', 'رحاب', 'رحمة', 'رُدينة', 'رزان', 'رَسل', 'رشا', 'رضا', 'رضوى', 'رغد', 'رغدة', 'رِفقة', 'رُفيدة', 'رفيعة', 'رفيف', 'رقية', 'رنا', 'رِناد', 'رند', 'رنوة', 'رنيم', 'رهف', 'روان', 'رودين', 'رودينا', 'روضة', 'روفيدة', 'رويدا', 'ريا', 'ريانة', 'رية', 'ريدة', 'ريم', 'ريما', 'ريماس', 'ريناد', 'ريهام', 'زُبيدة', 'زُها', 'زهرة', 'زهوة', 'زهور', 'زوينة', 'زيان', 'زينب', 'زينة', 'سارية', 'سامية', 'سجى', 'سحر', 'سعاد', 'سُعدة', 'سُعدى', 'سكون', 'سكينة', 'سُلاف', 'سُلافة', 'سلام', 'سلمى', 'سلوى', 'سماح', 'سمر', 'سمية', 'سميحة', 'سميرة', 'سناء', 'سهى', 'سُهير', 'سهيلة', 'شادية', 'شامة', 'شذى', 'شروق', 'شريفة', 'شفاء', 'شكرية', 'شمس', 'شهد', 'شهيرة', 'شوق', 'شيماء', 'صافية', 'صالحة', 'صبا', 'صباح', 'صفا', 'صفاء', 'صفية', 'ضحى', 'ضوى', 'ضياء', 'طاهرة', 'ظبية', 'عائشة', 'عالية', 'عايدة', 'عايشة', 'عبير', 'عزة', 'عزيزة', 'عطايا', 'عطيات', 'عطية', 'عفاف', 'عفت', 'علا', 'علياء', 'علية', 'عليمة', 'عنايات', 'عنبر', 'عنود', 'عهد', 'عودة', 'عون', 'غادة', 'غالية', 'غدير', 'غفران', 'غلا', 'غيداء', 'غزل', 'فاتن', 'فاتنة', 'فادية', 'فاضلة', 'فاطمة', 'فتون', 'فجر', 'فداء', 'فدوة', 'فرات', 'فرح', 'فرحة', 'فريدة', 'فضة', 'فضيلة', 'فُلة', 'فوزية', 'قسمة', 'قطوف', 'قمر', 'كاملة', 'كرم', 'كرمة', 'كريمة', 'كوثر', 'لبنى', 'لجين', 'لطيفة', 'لقاء', 'لمى', 'لمياء', 'ليال', 'ليلى', 'ماجدة', 'مايسة', 'مجد', 'مديحة', 'مرام', 'مروة', 'مروى', 'مشيرة', 'ملك', 'مليكة', 'منار', 'منال', 'منة', 'منى', 'منيرة', 'مها', 'مهجة', 'مهرة', 'مهيرة', 'ميار', 'ميس', 'ميساء', 'ميسرة', 'ميلاء', 'نائلة', 'نادية', 'ناهد', 'نبيلة', 'نجاة', 'نجلاء', 'نجوى', 'ندى', 'نسمة', 'نسيم', 'نضال', 'نعمة', 'نعيمة', 'نغم', 'نفيسة', 'نهاد', 'نهلة', 'نهى', 'نوارة', 'نوال', 'نور', 'نورا', 'نوران', 'نورة', 'نويرة', 'نيرة', 'نيل', 'هاجر', 'هادية', 'هالة', 'هانية', 'هبات', 'هبة', 'هدايا', 'هداية', 'هدى', 'هدية', 'هدير', 'هديل', 'هلا', 'همت', 'همسة', 'هنا', 'هناء', 'هنادي', 'هند', 'هنوف', 'هنية', 'هيا', 'هيام', 'هيفاء', 'هيلة', 'وئام', 'وجد', 'وجدان', 'وجنات', 'وجيدة', 'وداد', 'وديعة', 'ورد', 'وردة', 'وسام', 'وسيلة', 'وصال', 'وعد', 'وعود', 'وفاء', 'ولاء', 'وميض', 'وهاد', 'وهبة', 'وهيبة', 'يسر', 'يسرا', 'يسرية', 'يقين', 'يمامة', 'يُمن', 'يمنى', 'جيسيكا', 'سامنثا', 'ميرنا', 'نرجس', 'نرمين', 'يوستينا', 'إنجي', 'بروين', 'بِنان', 'بيلار', 'تاج', 'جالا', 'جُلنار', 'جَوان', 'جيهان', 'ريتاج', 'سوسن', 'سيرين', 'شاهيناز', 'شريهان', 'شويكار', 'شيرين', 'صافيناز', 'فيروز', 'ماهيتاب', 'ميلي', 'ناريمان', 'نازك', 'نسرين', 'نيروز', 'يارا', 'جاكلين', 'مي', 'أوليفيا', 'بِربارة', 'جولي', 'جوليا', 'جوليانا', 'جوليت', 'روجينا', 'ريتا', 'سيلفيا', 'فيرجينيا', 'فيفيان', 'فيكتوريا', 'كاترين', 'كارلا', 'كارمن', 'كارولين', 'كارولينا', 'كلارا', 'لوسي', 'لينا', 'مارتينا', 'ماريانا', 'نورما', 'أليس', 'تالا', 'تالين', 'تريز', 'ساندرا', 'ساندي', 'سيلين', 'سيلينا', 'كارين', 'ليديا', 'مادلين', 'مايا', 'نيكول', 'نيللي', 'إيفون', 'إيلاف', 'بَسنت', 'بِيسان', 'تالة', 'جورجيت', 'رتّالة', 'رميساء', 'زليخة', 'زمردة', 'سالي', 'سيليا', 'سيمون', 'صوفي', 'صوفيا', 'عبلة', 'فريال', 'كادي', 'كاميليا', 'مارينا', 'ميريام', 'مونيكا', 'ميسون', 'ناردين', 'نانيس', 'يوكابد', 'إيزيس', 'تلا', 'لي', 'لي', 'لامار', 'نورسين', 'آسيا', 'إيلين', 'أسيل', 'وضّاء', 'أسينات', 'لوسيندا', 'هُديّن', 'مرح', 'برديس', 'بهار', 'آزاد', 'روجين', 'نازلي', 'مكة', 'دهب', 'نايا', 'أماندا', 'إليانور', 'داليدا', 'لؤلؤة', 'ونس', 'حُسنى', 'حُسن'];
+         
+         // All names //
+         
+         const allNames = boysNames.concat(girlsNames);
+         
+         // checkboxs //
+         
+         const inlineCheckboxBoy = document.getElementById('inlineCheckboxB');
+         const inlineCheckboxGirl = document.getElementById('inlineCheckboxG');
+         
+         
+         // 4 letter words function //
+         
+         const newList = []
+           function fourLetters (){
+         for (let i=0; i< boysNames.length; i++){
+         if (boysNames[i].length < 4){
+         text = boysNames[i] += " ";
+         newList.push(text);
+         }
+         }
+         let name = document.getElementById('boyName');
+         name.innerHTML = newList.join("<ul></ul>")
+         
+         }
+         
+         // show all boy names and clear screen function //
+         
+         function showName(){
+           document.getElementById('girlName').innerHTML = "";
+           let name = document.getElementById('boyName');
+           let i;
+         for(i=0; i < boysNames.length ;i++) {
+           name.innerHTML += boysNames[i] + "<br>";	
+         }
+           }
+         
+         // show all girl names and clear screen function //
+         
+           function showgName(){
+           document.getElementById('boyName').innerHTML = "";
+           let name = document.getElementById('girlName');
+           let i;
+         for(i=0; i < girlsNames.length ;i++) {
+           name.innerHTML += girlsNames[i] + "<br>";	
+         }
+           }
+         
+         // generate a random boy name from the list //
+         
+         function luckName(){
+           document.getElementById('boyName').innerHTML = "";
+         let name = document.getElementById('boyName');
+         name.innerHTML = boysNames[Math.floor(Math.random()*boysNames.length)];
+         }
+         
+         // generate a random girl name from the list //
+         
+         function luckgName(){
+           document.getElementById('boyName').innerHTML = "";
+         let name = document.getElementById('girlName');
+         name.innerHTML = girlsNames[Math.floor(Math.random()*girlsNames.length)];
+         }
+         
+         // names starting with input letter
+         
+         function startWith(){
+         let boyNameInput = document.getElementById('searchByLetterB').value;
+         let namesStartWith = [];
+         let gNamesStartWith = [];
+         let allNamesStartWith = [];
+         // making a list with boys names that start with input letter //
+         
+         for (let i=0; i< boysNames.length; i++){
+               for (let a=0; a<1; a++)
+               	  if (boysNames[i][0] === boyNameInput){
+                   	namesStartWith.push(boysNames[i]);
+                     }
+           }
+         // making a list with girls names that start with input letter //
+         for (let i=0; i< girlsNames.length; i++){
+               for (let a=0; a<1; a++)
+               	  if (girlsNames[i][0] === boyNameInput){
+                   	gNamesStartWith.push(girlsNames[i]);
+                     }
+           }
+         // making a list with all names that start with input letter //
+         for (let i=0; i< allNames.length; i++){
+               for (let a=0; a<1; a++)
+               	  if (allNames[i][0] === boyNameInput){
+                   	allNamesStartWith.push(allNames[i]);
+                     }
+           }
+         // conditions and radio buttons //
+         // wrong input //
+         
+           if (namesStartWith.length === 0){
+         document.getElementById("exampleModalLabelA").innerHTML = " ";
+           document.getElementById("nameByLetterBoy").innerHTML = "استخدم حروف عربية و حرف واحد";
+           }
+         // Boy name input //
+         
+           else if (namesStartWith.length !== 0 && inlineCheckboxBoy.checked == true && inlineCheckboxGirl.checked == false){
+           let search = document.getElementById('nameByLetterBoy');
+         search.innerHTML = namesStartWith.join("<ul></ul>");
+         document.getElementById("exampleModalLabelA").innerHTML = "ولد";
+         document.getElementById("nameByLetter").innerHTML = " ";
+           }
+         // girl name input //
+         
+           else if (gNamesStartWith.length !== 0 && inlineCheckboxBoy.checked == false && inlineCheckboxGirl.checked == true){
+         document.getElementById("exampleModalLabelA").innerHTML = "بنت";
+         
+           let search = document.getElementById('nameByLetterBoy');
+         search.innerHTML = gNamesStartWith.join("<ul></ul>");
+         document.getElementById("nameByLetter").innerHTML = " ";
+           }
+         // all names input //
+         
+           else if (gNamesStartWith.length !== 0 && inlineCheckboxBoy.checked == true && inlineCheckboxGirl.checked == true){
+         document.getElementById("exampleModalLabelA").innerHTML = "بنت و ولد";
+           let search = document.getElementById('nameByLetterBoy');
+         search.innerHTML = allNamesStartWith.join("<ul></ul>");
+         document.getElementById("nameByLetter").innerHTML = " ";
+           }
+         else {
+         document.getElementById("exampleModalLabelA").innerHTML = " ";
+         document.getElementById("nameByLetterBoy").innerHTML = "أختار اسم ولد او بنت";
+         
+         }
+         }
+         function closeNameByLetter(){
+         document.getElementById("nameByLetter").innerHTML = " ";
+         document.getElementById("nameByLetterBoy").innerHTML = " ";
+         }
+         
+         //]]>
+      </script>
+   </body>
 </html>
